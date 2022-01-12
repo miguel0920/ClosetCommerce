@@ -1,1 +1,1 @@
-# ClosetCommerce
+# Closet Commerce
