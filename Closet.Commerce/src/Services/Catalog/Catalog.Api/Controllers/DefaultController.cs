@@ -6,7 +6,6 @@ namespace Catalog.Api.Controllers
     [Route("/")]
     public class DefaultController : ControllerBase
     {
-
         [HttpGet]
         public string Get() => "Running..";
     }
