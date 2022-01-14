@@ -1,4 +1,6 @@
 using Catalog.Persistence.Database;
+using Catalog.Service.Queries.Contracts;
+using Catalog.Service.Queries.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +26,9 @@ namespace Catalog.Api
                 opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                 x => x.MigrationsHistoryTable("_EFMigrationsHistory", "Catalog"))
             );
+
+            services.AddTransient<IProductQueryService, ProductQueryService>();
+
             services.AddControllers();
         }
 

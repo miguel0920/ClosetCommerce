@@ -11,7 +11,7 @@ namespace Catalog.Persistence.Database.Configuration
         {
             typeBuilder.HasIndex(x => x.ProductId);
             typeBuilder.Property(x => x.Name).IsRequired().HasMaxLength(100);
-            typeBuilder.Property(x => x.Description).IsRequired().HasMaxLength(500);            
+            typeBuilder.Property(x => x.Description).IsRequired().HasMaxLength(500);
 
             List<Product> products = new();
             Random random = new();

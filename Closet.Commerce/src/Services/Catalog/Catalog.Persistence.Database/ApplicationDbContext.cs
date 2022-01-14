@@ -1,7 +1,6 @@
 ﻿using Catalog.Domain;
 using Catalog.Persistence.Database.Configuration;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Catalog.Persistence.Database
 {
