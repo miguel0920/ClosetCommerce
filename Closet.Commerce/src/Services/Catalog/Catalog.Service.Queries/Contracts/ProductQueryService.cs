@@ -23,7 +23,7 @@ namespace Catalog.Service.Queries.Contracts
         {
             var collection = await _applicationDbContext.Products
                 .Where(p => products == null || products.Contains(p.ProductId))
-                .OrderByDescending(p => p.ProductId)
+                .OrderByDescending(p => p.ProductId).Include(p => p.Stock)
                 .GetPageAsync(page, take);
             return collection.MapTo<DataCollection<ProductDto>>();
         }

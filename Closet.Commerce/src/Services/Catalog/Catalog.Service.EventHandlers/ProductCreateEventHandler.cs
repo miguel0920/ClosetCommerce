@@ -2,11 +2,6 @@
 using Catalog.Persistence.Database;
 using Catalog.Service.EventHandlers.Commands;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Catalog.Service.EventHandlers
 {
