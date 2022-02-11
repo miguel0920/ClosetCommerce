@@ -25,7 +25,6 @@ namespace Catalog.Service.Queries.Contracts
                 .Where(p => products == null || products.Contains(p.ProductId))
                 .OrderByDescending(p => p.ProductId)
                 .GetPageAsync(page, take);
-
             return collection.MapTo<DataCollection<ProductDto>>();
         }
 

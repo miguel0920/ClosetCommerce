@@ -1,12 +1,14 @@
 using Catalog.Persistence.Database;
 using Catalog.Service.Queries.Contracts;
 using Catalog.Service.Queries.Interfaces;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Reflection;
 
 namespace Catalog.Api
 {
@@ -28,7 +30,7 @@ namespace Catalog.Api
             );
 
             services.AddTransient<IProductQueryService, ProductQueryService>();
-
+            services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers"));
             services.AddControllers();
         }
 

@@ -10,7 +10,7 @@
             }
         }
 
-        public IEnumerable<T> Items { get; set; }
+        public IEnumerable<T> Items { get; set; } = new List<T>();
         public int Total { get; set; }
         public int Page { get; set; }
         public int Pages { get; set; }
