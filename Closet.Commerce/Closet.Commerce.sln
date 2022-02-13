@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Domain", "src\Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Service.Queries", "src\Services\Catalog\Catalog.Service.Queries\Catalog.Service.Queries.csproj", "{CF5DF782-491B-4FC6-9967-23A59381B7F3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4B289D56-54EF-4027-B084-F1C36457067F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Common", "05.Common", "{4B289D56-54EF-4027-B084-F1C36457067F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Collection", "src\Services\Service.Common.Collection\Service.Common.Collection.csproj", "{1633C4ED-2E2A-40BF-A244-ADED634420C6}"
 EndProject
@@ -41,15 +41,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Paging", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Common.Mapping", "src\Services\Service.Common.Mapping\Service.Common.Mapping.csproj", "{096A4F94-5DDC-40E4-8A6B-889C58786AF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Service.EventHandlers", "src\Services\Catalog\Catalog.Service.EventHandlers\Catalog.Service.EventHandlers.csproj", "{568624CC-6828-411A-BFDE-BFCA22A8AE0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Service.EventHandlers", "src\Services\Catalog\Catalog.Service.EventHandlers\Catalog.Service.EventHandlers.csproj", "{568624CC-6828-411A-BFDE-BFCA22A8AE0A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Common", "05.Common", "{72BAECC0-786C-459A-9C0B-70331B465C17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Common", "src\Services\Catalog\Catalog.Common\Catalog.Common.csproj", "{E29D71A2-893D-4F44-98A5-61F720F6E3DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Common", "src\Services\Catalog\Catalog.Common\Catalog.Common.csproj", "{E29D71A2-893D-4F44-98A5-61F720F6E3DC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Common", "04. Common", "{DF5913C3-D52F-451F-8206-72FBF96B7872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging", "src\Common.Logging\Common.Logging.csproj", "{400D5B7D-330F-4567-8A98-C6D35B0DD832}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Logging", "src\Common.Logging\Common.Logging.csproj", "{400D5B7D-330F-4567-8A98-C6D35B0DD832}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Testing", "06.Testing", "{AF55345D-1202-41B8-AA1B-57FC81EF198F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Test", "src\Services\Catalog\Catalog.Tests\Catalog.Test.csproj", "{03FD3C64-88C3-4045-B607-9AC487606AA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +101,10 @@ Global
 		{400D5B7D-330F-4567-8A98-C6D35B0DD832}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{400D5B7D-330F-4567-8A98-C6D35B0DD832}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{400D5B7D-330F-4567-8A98-C6D35B0DD832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FD3C64-88C3-4045-B607-9AC487606AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FD3C64-88C3-4045-B607-9AC487606AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FD3C64-88C3-4045-B607-9AC487606AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FD3C64-88C3-4045-B607-9AC487606AA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,6 +130,8 @@ Global
 		{72BAECC0-786C-459A-9C0B-70331B465C17} = {D088D510-AC5F-4486-8405-8F8647A81026}
 		{E29D71A2-893D-4F44-98A5-61F720F6E3DC} = {72BAECC0-786C-459A-9C0B-70331B465C17}
 		{400D5B7D-330F-4567-8A98-C6D35B0DD832} = {DF5913C3-D52F-451F-8206-72FBF96B7872}
+		{AF55345D-1202-41B8-AA1B-57FC81EF198F} = {D088D510-AC5F-4486-8405-8F8647A81026}
+		{03FD3C64-88C3-4045-B607-9AC487606AA8} = {AF55345D-1202-41B8-AA1B-57FC81EF198F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {646175F2-0433-4C6E-AC1B-0B9BAB7083D6}
