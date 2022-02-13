@@ -9,11 +9,13 @@
 *.user
 *.userosscache
 *.sln.docstates
-/Pdf
-/ApiItierra
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+
+# Ignore local appSettings
+appSettings.Development.json
+appsettings.Development.json
 
 # Mono auto generated files
 mono_crash.*
