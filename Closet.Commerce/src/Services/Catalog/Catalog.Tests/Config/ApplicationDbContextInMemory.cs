@@ -1,17 +1,16 @@
 ﻿using Catalog.Persistence.Database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.Tests.Config
 {
     public static class ApplicationDbContextInMemory
     {
-        //public static ApplicationDbContext Get()
-        //{
-        //    var options = new DbContextOptionsBuilder<ApplicationDbContext>();
-        //}
+        public static ApplicationDbContext Get()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase(databaseName: "Catalog.db")
+                .Options;
+            return new ApplicationDbContext(options);
+        }
     }
 }
