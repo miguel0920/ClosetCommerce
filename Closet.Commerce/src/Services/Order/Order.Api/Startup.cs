@@ -1,6 +1,3 @@
-using Catalog.Persistence.Database;
-using Catalog.Service.Queries.Contracts;
-using Catalog.Service.Queries.Interfaces;
 using Common.Logging;
 using HealthChecks.UI.Client;
 using MediatR;
@@ -16,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.Reflection;
 
-namespace Catalog.Api
+namespace Order.Api
 {
     public class Startup
     {
@@ -29,17 +26,17 @@ namespace Catalog.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(opts =>
-                opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                x => x.MigrationsHistoryTable("_EFMigrationsHistory", "Catalog"))
-            );
-            services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers"));
+            //services.AddDbContext<ApplicationDbContext>(opts =>
+            //    opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+            //    x => x.MigrationsHistoryTable("_EFMigrationsHistory", "Order"))
+            //);
+            //services.AddMediatR(Assembly.Load("Order.Service.EventHandlers"));
 
-            services.AddTransient<IProductQueryService, ProductQueryService>();
+            //services.AddTransient<IProductQueryService, ProductQueryService>();
 
-            services.AddHealthChecks()
-                .AddCheck("self", () => HealthCheckResult.Healthy())
-                .AddDbContextCheck<ApplicationDbContext>();
+            //services.AddHealthChecks()
+            //    .AddCheck("self", () => HealthCheckResult.Healthy())
+            //    .AddDbContextCheck<ApplicationDbContext>();
 
             services.AddHealthChecksUI(setup => setup.DisableDatabaseMigrations())
                 .AddInMemoryStorage();
