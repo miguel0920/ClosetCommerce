@@ -11,6 +11,7 @@
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.2" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="6.0.2" />
     <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
@@ -22,8 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common.Logging\Common.Logging.csproj" />
+    <ProjectReference Include="..\..\..\Common.Logging\Common.Logging.csproj" />
     <ProjectReference Include="..\Customer.Persistence.Database\Customer.Persistence.Database.csproj" />
+    <ProjectReference Include="..\Customer.Service.EventHandlers\Customer.Service.EventHandlers.csproj" />
+    <ProjectReference Include="..\Customer.Service.Queries\Customer.Service.Queries.csproj" />
   </ItemGroup>
 
 </Project>

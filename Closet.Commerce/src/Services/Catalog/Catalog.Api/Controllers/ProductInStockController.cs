@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Catalog.Api.Controllers
 {
-    [Route("stocks")]
+    [Route("v1/stocks")]
     [ApiController]
     public class ProductInStockController : ControllerBase
     {
