@@ -85,13 +85,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Persistence.Databa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Domain", "src\Services\Customer\Customer.Domain\Customer.Domain.csproj", "{74D2A121-03E7-4043-9BCC-0CDFD268B704}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Service.Queries", "src\Services\Customer\Customer.Service.Queries\Customer.Service.Queries.csproj", "{79255E99-C848-4362-9EE6-EC8218CD6F99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Service.Queries", "src\Services\Customer\Customer.Service.Queries\Customer.Service.Queries.csproj", "{79255E99-C848-4362-9EE6-EC8218CD6F99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Service.EventHandlers", "src\Services\Customer\Customer.Service.EventHandlers\Customer.Service.EventHandlers.csproj", "{3E129164-B273-419F-BE4E-BB2257115D8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Service.EventHandlers", "src\Services\Customer\Customer.Service.EventHandlers\Customer.Service.EventHandlers.csproj", "{3E129164-B273-419F-BE4E-BB2257115D8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Test", "src\Services\Customer\Customer.Test\Customer.Test.csproj", "{CC5D71EB-31FE-4C36-BB97-2C7C1C95C9C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Test", "src\Services\Customer\Customer.Test\Customer.Test.csproj", "{CC5D71EB-31FE-4C36-BB97-2C7C1C95C9C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Api", "src\Services\Order\Order.Api\Order.Api.csproj", "{FBC3EB56-03F2-4C8D-9E37-E5C7A37A31E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Api", "src\Services\Order\Order.Api\Order.Api.csproj", "{FBC3EB56-03F2-4C8D-9E37-E5C7A37A31E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Persistence.Database", "src\Services\Order\Order.Persistence.Database\Order.Persistence.Database.csproj", "{D5E67EB4-E75E-4958-A97D-6AEE8514EC28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Domain", "src\Services\Order\Order.Domain\Order.Domain.csproj", "{D04FF8E9-4D20-408E-AD0E-C80B0F14E133}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Common", "src\Services\Order\Order.Common\Order.Common.csproj", "{614BFEC9-50D0-4486-8150-8354FB8CBB9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Service.EventHandlers", "src\Services\Order\Order.Service.EventHandlers\Order.Service.EventHandlers.csproj", "{06476FA1-EC42-4FDE-A397-EA2792C81C39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +179,22 @@ Global
 		{FBC3EB56-03F2-4C8D-9E37-E5C7A37A31E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBC3EB56-03F2-4C8D-9E37-E5C7A37A31E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBC3EB56-03F2-4C8D-9E37-E5C7A37A31E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E67EB4-E75E-4958-A97D-6AEE8514EC28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E67EB4-E75E-4958-A97D-6AEE8514EC28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E67EB4-E75E-4958-A97D-6AEE8514EC28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E67EB4-E75E-4958-A97D-6AEE8514EC28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D04FF8E9-4D20-408E-AD0E-C80B0F14E133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D04FF8E9-4D20-408E-AD0E-C80B0F14E133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D04FF8E9-4D20-408E-AD0E-C80B0F14E133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D04FF8E9-4D20-408E-AD0E-C80B0F14E133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{614BFEC9-50D0-4486-8150-8354FB8CBB9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{614BFEC9-50D0-4486-8150-8354FB8CBB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{614BFEC9-50D0-4486-8150-8354FB8CBB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{614BFEC9-50D0-4486-8150-8354FB8CBB9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06476FA1-EC42-4FDE-A397-EA2792C81C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06476FA1-EC42-4FDE-A397-EA2792C81C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06476FA1-EC42-4FDE-A397-EA2792C81C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06476FA1-EC42-4FDE-A397-EA2792C81C39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -217,6 +241,10 @@ Global
 		{3E129164-B273-419F-BE4E-BB2257115D8E} = {22435E0E-62C1-4F74-991D-63E2787CCCF9}
 		{CC5D71EB-31FE-4C36-BB97-2C7C1C95C9C4} = {101A71F3-F555-4CD7-A447-E9A71B805970}
 		{FBC3EB56-03F2-4C8D-9E37-E5C7A37A31E6} = {21E9F794-5344-4A34-803D-8DE06133D6C7}
+		{D5E67EB4-E75E-4958-A97D-6AEE8514EC28} = {A40B5E93-CF25-48CD-A235-59DDF18E1A93}
+		{D04FF8E9-4D20-408E-AD0E-C80B0F14E133} = {C0542F23-A191-4BD2-892B-B5D57CCB1B25}
+		{614BFEC9-50D0-4486-8150-8354FB8CBB9E} = {519008A2-6A18-488E-AC68-4FFB31BC80C0}
+		{06476FA1-EC42-4FDE-A397-EA2792C81C39} = {1FD1AF55-61C3-47B1-B15C-45BA3A2D2334}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {646175F2-0433-4C6E-AC1B-0B9BAB7083D6}

@@ -1,16 +1,10 @@
 using Common.Logging;
 using HealthChecks.UI.Client;
 using MediatR;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Order.Persistence.Database;
 using System.Reflection;
 
 namespace Order.Api
@@ -26,17 +20,17 @@ namespace Order.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ApplicationDbContext>(opts =>
-            //    opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-            //    x => x.MigrationsHistoryTable("_EFMigrationsHistory", "Order"))
-            //);
-            //services.AddMediatR(Assembly.Load("Order.Service.EventHandlers"));
+            services.AddDbContext<ApplicationDbContext>(opts =>
+                opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                x => x.MigrationsHistoryTable("_EFMigrationsHistory", "Order"))
+            );
+            services.AddMediatR(Assembly.Load("Order.Service.EventHandlers"));
 
             //services.AddTransient<IProductQueryService, ProductQueryService>();
 
-            //services.AddHealthChecks()
-            //    .AddCheck("self", () => HealthCheckResult.Healthy())
-            //    .AddDbContextCheck<ApplicationDbContext>();
+            services.AddHealthChecks()
+                .AddCheck("self", () => HealthCheckResult.Healthy())
+                .AddDbContextCheck<ApplicationDbContext>();
 
             services.AddHealthChecksUI(setup => setup.DisableDatabaseMigrations())
                 .AddInMemoryStorage();

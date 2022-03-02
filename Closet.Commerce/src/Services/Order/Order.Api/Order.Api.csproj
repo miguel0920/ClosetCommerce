@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common.Logging\Common.Logging.csproj" />
+    <ProjectReference Include="..\Order.Persistence.Database\Order.Persistence.Database.csproj" />
   </ItemGroup>
 
 </Project>
