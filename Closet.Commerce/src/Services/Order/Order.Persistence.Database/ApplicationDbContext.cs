@@ -16,8 +16,8 @@ namespace Order.Persistence.Database
             ModelConfig(modelBuilder);
         }
 
-        public DbSet<Domain.Order>? Orders { get; set; }
-        public DbSet<Domain.OrderDetail>? OrderDetail { get; set; }
+        public DbSet<Domain.Order> Orders { get; set; }
+        public DbSet<Domain.OrderDetail> OrderDetail { get; set; }
 
         private void ModelConfig(ModelBuilder modelBuilder)
         {
