@@ -16,7 +16,7 @@ namespace Catalog.Api.Controllers
             _mediator = mediator;
         }
         [HttpPut]
-        public async Task<IActionResult> UpdateStock(ProductIsStockUpdateStockCommand command)
+        public async Task<IActionResult> UpdateStock(ProductInStockUpdateStockCommand command)
         {
             await _mediator.Publish(command);
             return NoContent();

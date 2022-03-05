@@ -8,16 +8,16 @@ using static Catalog.Common.Enums;
 
 namespace Catalog.Service.EventHandlers
 {
-    public class ProductInStockUpdateEventHandler : INotificationHandler<ProductIsStockUpdateStockCommand>
+    public class ProductInStockUpdateEventHandler : INotificationHandler<ProductInStockUpdateStockCommand>
     {
         public ProductInStockUpdateEventHandler(ApplicationDbContext dbContext, ILogger<ProductInStockUpdateEventHandler> logger)
         {
             _dbContext = dbContext;
             _logger = logger;
         }
-        public async Task Handle(ProductIsStockUpdateStockCommand notification, CancellationToken cancellationToken)
+        public async Task Handle(ProductInStockUpdateStockCommand notification, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"--- {nameof(ProductIsStockUpdateStockCommand)} started ---");
+            _logger.LogInformation($"--- {nameof(ProductInStockUpdateStockCommand)} started ---");
 
             IEnumerable<int> product = notification.Items.Select(x => x.ProductId);
             List<ProductInStock> stocks = await _dbContext.Stocks.Where(x => product.Contains(x.ProductId)).ToListAsync(cancellationToken: cancellationToken);
@@ -55,7 +55,7 @@ namespace Catalog.Service.EventHandlers
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            _logger.LogInformation($"--- {nameof(ProductIsStockUpdateStockCommand)} Ended ---");
+            _logger.LogInformation($"--- {nameof(ProductInStockUpdateStockCommand)} Ended ---");
         }
 
         private readonly ILogger<ProductInStockUpdateEventHandler> _logger;

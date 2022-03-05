@@ -38,7 +38,7 @@ namespace Catalog.Tests
             context.SaveChanges();
 
             var handler = new ProductInStockUpdateEventHandler(context, GetLogger);
-            handler.Handle(new ProductIsStockUpdateStockCommand
+            handler.Handle(new ProductInStockUpdateStockCommand
             {
                 Items = new List<ProductIsStockUpdateItem>()
                 {
@@ -71,7 +71,7 @@ namespace Catalog.Tests
             try
             {
                 var handler = new ProductInStockUpdateEventHandler(context, GetLogger);
-                handler.Handle(new ProductIsStockUpdateStockCommand
+                handler.Handle(new ProductInStockUpdateStockCommand
                 {
                     Items = new List<ProductIsStockUpdateItem>()
                 {
@@ -110,7 +110,7 @@ namespace Catalog.Tests
             context.SaveChanges();
 
             var handler = new ProductInStockUpdateEventHandler(context, GetLogger);
-            handler.Handle(new ProductIsStockUpdateStockCommand
+            handler.Handle(new ProductInStockUpdateStockCommand
             {
                 Items = new List<ProductIsStockUpdateItem>()
                 {
@@ -134,7 +134,7 @@ namespace Catalog.Tests
             var productId = 4;
 
             var handler = new ProductInStockUpdateEventHandler(context, GetLogger);
-            handler.Handle(new ProductIsStockUpdateStockCommand
+            handler.Handle(new ProductInStockUpdateStockCommand
             {
                 Items = new List<ProductIsStockUpdateItem>()
                 {

@@ -3,15 +3,20 @@ using Microsoft.Extensions.Logging;
 using Order.Domain;
 using Order.Persistence.Database;
 using Order.Service.EventHandlers.Commands;
+using Order.Service.Proxies.Catalog.Commands;
+using Order.Service.Proxies.Catalog.Interfaces;
+using static Order.Service.Proxies.Catalog.Commands.ProductInStockUpdateStockCommand;
+using static Order.Service.Proxies.Catalog.Common.Enums;
 
 namespace Order.Service.EventHandlers
 {
     public class OrderCreateEventHandler : INotificationHandler<OrderCreateCommand>
     {
-        public OrderCreateEventHandler(ApplicationDbContext context, ILogger<OrderCreateEventHandler> logger)
+        public OrderCreateEventHandler(ApplicationDbContext context, ICatalogProxy catalogProxy, ILogger<OrderCreateEventHandler> logger)
         {
             _context = context;
             _logger = logger;
+            _catalogProxy = catalogProxy;
         }
 
         public async Task Handle(OrderCreateCommand notification, CancellationToken cancellationToken)
@@ -19,7 +24,7 @@ namespace Order.Service.EventHandlers
             _logger.LogInformation("--- New order creation started");
             var entry = new Domain.Order();
 
-            using (var trx = await _context.Database.BeginTransactionAsync())
+            using (var trx = await _context.Database.BeginTransactionAsync(cancellationToken))
             {
                 // 01. Prepare detail
                 _logger.LogInformation("--- Preparing detail");
@@ -31,8 +36,8 @@ namespace Order.Service.EventHandlers
 
                 // 03. Create order
                 _logger.LogInformation("--- Creating order");
-                await _context.AddAsync(entry);
-                await _context.SaveChangesAsync();
+                await _context.AddAsync(entry, cancellationToken);
+                await _context.SaveChangesAsync(cancellationToken);
 
                 _logger.LogInformation($"--- Order {entry.OrderId} was created");
 
@@ -41,15 +46,15 @@ namespace Order.Service.EventHandlers
 
                 try
                 {
-                    //await _catalogProxy.UpdateStockAsync(new ProductInStockUpdateStockCommand
-                    //{
-                    //    Items = notification.Items.Select(x => new ProductInStockUpdateItem
-                    //    {
-                    //        Action = ProductInStockAction.Substract,
-                    //        ProductId = x.ProductId,
-                    //        Stock = x.Quantity
-                    //    })
-                    //});
+                    await _catalogProxy.UpdateStockAsync(new ProductInStockUpdateStockCommand
+                    {
+                        Items = notification.Items.Select(x => new ProductIsStockUpdateItem
+                        {
+                            Action = ProductStockAction.Substract,
+                            ProductId = x.ProductId,
+                            Stock = x.Quantity
+                        })
+                    });
                 }
                 catch
                 {
@@ -58,7 +63,7 @@ namespace Order.Service.EventHandlers
                 }
 
                 // Lógica para actualizar el Stock
-                await trx.CommitAsync();
+                await trx.CommitAsync(cancellationToken);
             }
 
             _logger.LogInformation("--- New order creation ended");
@@ -87,6 +92,7 @@ namespace Order.Service.EventHandlers
             entry.Total = entry.Items.Sum(x => x.Total);
         }
 
+        private readonly ICatalogProxy _catalogProxy;
         private readonly ApplicationDbContext _context;
         private readonly ILogger<OrderCreateEventHandler> _logger;
     }

@@ -3,7 +3,7 @@ using static Catalog.Common.Enums;
 
 namespace Catalog.Service.EventHandlers.Commands
 {
-    public class ProductIsStockUpdateStockCommand : INotification
+    public class ProductInStockUpdateStockCommand : INotification
     {
         public IEnumerable<ProductIsStockUpdateItem> Items { get; set; } = new List<ProductIsStockUpdateItem>();
     }

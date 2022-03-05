@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Order.Persistence.Database;
+using Order.Service.Proxies;
+using Order.Service.Proxies.Catalog.Contracts;
+using Order.Service.Proxies.Catalog.Interfaces;
 using Order.Service.Queries.Contracts;
 using Order.Service.Queries.Interfaces;
 using System.Reflection;
@@ -29,6 +32,12 @@ namespace Order.Api
             services.AddMediatR(Assembly.Load("Order.Service.EventHandlers"));
 
             services.AddTransient<IOrderQueryService, OrderQueryService>();
+
+            //ApiUrl
+            services.Configure<ApiUrls>(config => Configuration.GetSection("ApiUrls").Bind(config));
+
+            //Proxies
+            services.AddHttpClient<ICatalogProxy, CatalogProxy>();
 
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())
