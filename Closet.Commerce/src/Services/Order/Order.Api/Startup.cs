@@ -36,8 +36,18 @@ namespace Order.Api
             //ApiUrl
             services.Configure<ApiUrls>(config => Configuration.GetSection("ApiUrls").Bind(config));
 
-            //Proxies
-            services.AddHttpClient<ICatalogProxy, CatalogProxy>();
+            //AzureServiceBus
+            services.Configure<AzureServiceBus>(config => Configuration.GetSection("AzureServiceBuses").Bind(config));
+
+            /**
+             * Proxies
+             */
+            //Http
+            services.AddHttpClient<ICatalogProxy, CatalogHttpProxy>();
+            
+            //Azure Service Bus
+            //services.AddTransient<ICatalogProxy, CatalogQueueProxy>();
+
 
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())

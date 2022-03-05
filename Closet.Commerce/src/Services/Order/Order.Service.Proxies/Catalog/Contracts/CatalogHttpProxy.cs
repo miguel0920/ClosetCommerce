@@ -6,9 +6,9 @@ using System.Text.Json;
 
 namespace Order.Service.Proxies.Catalog.Contracts
 {
-    public class CatalogProxy : ICatalogProxy
+    public class CatalogHttpProxy : ICatalogProxy
     {
-        public CatalogProxy(IOptions<ApiUrls> apiUrls, HttpClient httpClient)
+        public CatalogHttpProxy(IOptions<ApiUrls> apiUrls, HttpClient httpClient)
         {
             _apiUrls = apiUrls.Value;
             _httpClient = httpClient;
