@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Identity.Domain;
+using Identity.Service.EventHandlers.Commands;
+using MediatR;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Identity.Api.Controllers
 {
@@ -6,31 +10,27 @@ namespace Identity.Api.Controllers
     [ApiController]
     public class IdentityController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<string> Get()
+        public IdentityController(ILogger<IdentityController> logger, IMediator mediator)
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
+            _logger = logger;
+            _mediator = mediator;
         }
 
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Create(UserCreateCommand userCreate)
         {
+            if (ModelState.IsValid)
+            {
+                var result = await _mediator.Send(userCreate);
+                if (!result.Succeeded)
+                    return BadRequest(result.Errors);
+
+                return Ok();
+            }
+            return BadRequest();
         }
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        private readonly ILogger<IdentityController> _logger;
+        private readonly IMediator _mediator;
     }
 }

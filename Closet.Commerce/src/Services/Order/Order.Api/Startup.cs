@@ -44,7 +44,7 @@ namespace Order.Api
              */
             //Http
             services.AddHttpClient<ICatalogProxy, CatalogHttpProxy>();
-            
+
             //Azure Service Bus
             //services.AddTransient<ICatalogProxy, CatalogQueueProxy>();
 

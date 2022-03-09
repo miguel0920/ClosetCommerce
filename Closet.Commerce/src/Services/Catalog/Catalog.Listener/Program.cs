@@ -1,8 +1,5 @@
-﻿using System;
+﻿using Microsoft.Azure.ServiceBus;
 using System.Text;
-using System.Threading.Tasks;
-using Azure.Messaging.ServiceBus;
-using Microsoft.Azure.ServiceBus;
 
 namespace Catalog.Listener
 {

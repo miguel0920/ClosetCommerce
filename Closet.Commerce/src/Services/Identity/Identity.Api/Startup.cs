@@ -2,10 +2,12 @@
 using HealthChecks.UI.Client;
 using Identity.Domain;
 using Identity.Persistence.Database;
+using MediatR;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using System.Reflection;
 
 namespace Identity.Api
 {
@@ -26,7 +28,7 @@ namespace Identity.Api
                 x => x.MigrationsHistoryTable("_EFMigrationsHistory", "Identity"))
             );
 
-            //services.AddMediatR(Assembly.Load("Catalog.Service.EventHandlers"));
+            services.AddMediatR(Assembly.Load("Identity.Service.EventHandlers"));
 
             //services.AddTransient<IProductQueryService, ProductQueryService>();
 
