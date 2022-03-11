@@ -1,6 +1,9 @@
 ﻿using MediatR;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+=======
+>>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 using Microsoft.AspNetCore.Mvc;
 using Order.Service.EventHandlers.Commands;
 using Order.Service.Queries.DTOs;
@@ -11,7 +14,10 @@ namespace Order.Api.Controllers
 {
     [Route("v1/orders")]
     [ApiController]
+<<<<<<< HEAD
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+=======
+>>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
     public class OrderController : ControllerBase
     {
         public OrderController(IOrderQueryService orderQueryService, ILogger<OrderController> logger, IMediator mediator)

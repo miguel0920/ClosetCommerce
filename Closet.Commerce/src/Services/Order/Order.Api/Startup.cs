@@ -1,11 +1,17 @@
 using Common.Logging;
 using HealthChecks.UI.Client;
 using MediatR;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
+=======
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+>>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 using Order.Persistence.Database;
 using Order.Service.Proxies;
 using Order.Service.Proxies.Catalog.Contracts;
@@ -13,7 +19,10 @@ using Order.Service.Proxies.Catalog.Interfaces;
 using Order.Service.Queries.Contracts;
 using Order.Service.Queries.Interfaces;
 using System.Reflection;
+<<<<<<< HEAD
 using System.Text;
+=======
+>>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 
 namespace Order.Api
 {
@@ -60,6 +69,7 @@ namespace Order.Api
                 .AddInMemoryStorage();
 
             services.AddControllers();
+<<<<<<< HEAD
 
             // Add Authentication
             var secretKey = Encoding.ASCII.GetBytes(
@@ -78,6 +88,8 @@ namespace Order.Api
                     ValidateAudience = false
                 };
             });
+=======
+>>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
@@ -98,7 +110,12 @@ namespace Order.Api
             app.UseRouting();
 
             app.UseAuthorization();
+<<<<<<< HEAD
             app.UseAuthentication();
+=======
+
+            //app.UseHealthChecksUI()
+>>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 
             app.UseEndpoints(endpoints =>
             {

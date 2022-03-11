@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Identity.Service.Queries.DTOs;
 using Identity.Service.Queries.Interfaces;
 using MediatR;
@@ -5,6 +6,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Common.Collection;
+=======
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 
 namespace Identity.Api.Controllers
 {
@@ -13,6 +19,7 @@ namespace Identity.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+<<<<<<< HEAD
         public UserController(IUserQueryService userQueryService, ILogger<UserController> logger, IMediator mediator)
         {
             _userQueryService = userQueryService;
@@ -36,5 +43,7 @@ namespace Identity.Api.Controllers
         private readonly IUserQueryService _userQueryService;
         private readonly ILogger<UserController> _logger;
         private readonly IMediator _mediator;
+=======
+>>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
     }
 }
