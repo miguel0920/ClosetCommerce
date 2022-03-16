@@ -2,11 +2,8 @@
 using Catalog.Service.Queries.DTOs;
 using Catalog.Service.Queries.Interfaces;
 using MediatR;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Service.Common.Collection;
@@ -20,10 +17,7 @@ namespace Catalog.Api.Controllers
 {
     [Route("v1/products")]
     [ApiController]
-<<<<<<< HEAD
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
     public class ProductController : ControllerBase
     {
         public ProductController(IProductQueryService productQueryService, ILogger<ProductController> logger, IMediator mediator)

@@ -4,7 +4,6 @@ using Customer.Service.Queries.Contracts;
 using Customer.Service.Queries.Interfaces;
 using HealthChecks.UI.Client;
 using MediatR;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
@@ -12,12 +11,6 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
-=======
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System.Reflection;
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 
 namespace Customer.Api
 {
@@ -48,9 +41,6 @@ namespace Customer.Api
                 .AddInMemoryStorage();
 
             services.AddControllers();
-<<<<<<< HEAD
-
-            // Add Authentication
             var secretKey = Encoding.ASCII.GetBytes(
                 Configuration.GetValue<string>("SecretKey")
             );
@@ -67,8 +57,6 @@ namespace Customer.Api
                     ValidateAudience = false
                 };
             });
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
@@ -89,10 +77,7 @@ namespace Customer.Api
             app.UseRouting();
 
             app.UseAuthorization();
-<<<<<<< HEAD
             app.UseAuthentication();
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 
             app.UseEndpoints(endpoints =>
             {

@@ -2,11 +2,8 @@
 using Customer.Service.Queries.DTOs;
 using Customer.Service.Queries.Interfaces;
 using MediatR;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 using Microsoft.AspNetCore.Mvc;
 using Service.Common.Collection;
 
@@ -14,10 +11,7 @@ namespace Customer.Api.Controllers
 {
     [Route("v1/clients")]
     [ApiController]
-<<<<<<< HEAD
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
     public class ClientController : ControllerBase
     {
         public ClientController(IClientQueryService clientQueryService, ILogger<ClientController> logger, IMediator mediator)

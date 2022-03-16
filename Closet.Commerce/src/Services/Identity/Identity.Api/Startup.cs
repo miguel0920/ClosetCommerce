@@ -2,11 +2,8 @@
 using HealthChecks.UI.Client;
 using Identity.Domain;
 using Identity.Persistence.Database;
-<<<<<<< HEAD
 using Identity.Service.Queries.Contracts;
 using Identity.Service.Queries.Interfaces;
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 using MediatR;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
@@ -35,12 +32,8 @@ namespace Identity.Api
 
             services.AddMediatR(Assembly.Load("Identity.Service.EventHandlers"));
 
-<<<<<<< HEAD
             services.AddTransient<IUserQueryService, UserQueryService>();
-=======
             //services.AddTransient<IProductQueryService, ProductQueryService>();
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
-
 
             //Identity
             services.AddIdentity<ApplicationUser, ApplicationRole>()

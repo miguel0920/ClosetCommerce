@@ -4,10 +4,7 @@ using Catalog.Service.Queries.Interfaces;
 using Common.Logging;
 using HealthChecks.UI.Client;
 using MediatR;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -18,13 +15,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-<<<<<<< HEAD
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
-=======
-using System.Reflection;
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 
 namespace Catalog.Api
 {

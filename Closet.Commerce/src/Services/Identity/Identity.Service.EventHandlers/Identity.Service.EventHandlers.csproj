@@ -8,19 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="10.0.1" />
-<<<<<<< HEAD
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Identity.Domain\Identity.Domain.csproj" />
-<<<<<<< HEAD
     <ProjectReference Include="..\Identity.Persistence.Database\Identity.Persistence.Database.csproj" />
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
   </ItemGroup>
 
 </Project>

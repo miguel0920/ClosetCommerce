@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 ﻿using Identity.Service.EventHandlers.Commands;
 using MediatR;
-=======
-﻿using Identity.Domain;
-using Identity.Service.EventHandlers.Commands;
-using MediatR;
-using Microsoft.AspNetCore.Identity;
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
 using Microsoft.AspNetCore.Mvc;
 
 namespace Identity.Api.Controllers
@@ -35,7 +28,6 @@ namespace Identity.Api.Controllers
             return BadRequest();
         }
 
-<<<<<<< HEAD
         [HttpPost("authentication")]
         public async Task<IActionResult> Authentication(UserLoginCommand userLogin)
         {
@@ -50,8 +42,6 @@ namespace Identity.Api.Controllers
             return BadRequest();
         }
 
-=======
->>>>>>> 37efefdb37a2aa228744357c1615ffe5e8be5777
         private readonly ILogger<IdentityController> _logger;
         private readonly IMediator _mediator;
     }
