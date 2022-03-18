@@ -32,7 +32,7 @@
       },
       "distributionName": ""
     },
-    "Catalog.Api": {
+    "Identity.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

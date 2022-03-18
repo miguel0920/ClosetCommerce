@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
 
-namespace Api.Gateway.Proxies
+namespace Api.Gateway.Proxies.Implementations
 {
     public class CatalogProxy : ICatalogProxy
     {
