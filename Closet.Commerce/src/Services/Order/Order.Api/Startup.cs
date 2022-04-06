@@ -46,6 +46,7 @@ namespace Order.Api
              * Proxies
              */
             //Http
+            services.AddHttpContextAccessor();
             services.AddHttpClient<ICatalogProxy, CatalogHttpProxy>();
 
             //Azure Service Bus

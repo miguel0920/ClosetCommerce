@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 using Order.Service.Proxies.Catalog.Commands;
 using Order.Service.Proxies.Catalog.Interfaces;
+using Order.Service.Proxies.Config;
 using System.Text;
 using System.Text.Json;
 
@@ -8,8 +10,9 @@ namespace Order.Service.Proxies.Catalog.Contracts
 {
     public class CatalogHttpProxy : ICatalogProxy
     {
-        public CatalogHttpProxy(IOptions<ApiUrls> apiUrls, HttpClient httpClient)
+        public CatalogHttpProxy(IOptions<ApiUrls> apiUrls, HttpClient httpClient, IHttpContextAccessor _httpContextAccessor)
         {
+            httpClient.AddBearerToken(_httpContextAccessor);
             _apiUrls = apiUrls.Value;
             _httpClient = httpClient;
         }
